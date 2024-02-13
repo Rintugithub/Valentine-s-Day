@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Card</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://cdn.pixabay.com/photo/2016/11/23/17/25/heart-1851569_960_720.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            width: 400px;
+            animation: toaster 4s ease-in-out infinite alternate;
+        }
+        @keyframes toaster {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+        button {
+            background-color: #ff4d6c;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 24px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            outline: none;
+        }
+        button:hover {
+            background-color: #ff6381;
+        }
+        h1 {
+            font-size: 32px;
+            color: #ff4d6c;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        p {
+            font-size: 18px;
+            color: #333333;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Happy Valentine's Day!</h1>
+        <img src="https://thumbs.dreamstime.com/z/heart-roses-valentines-day-made-red-isolated-white-background-36600776.jpg?w=768" alt="Toaster" width="100" style="margin-bottom: 20px;">
+        <p id="valentines-message">Click below to reveal your message.</p>
+        <button onclick="generateValentinesMessage()">Generate Message</button>
+    </div>
+
+    <script>
+        function generateValentinesMessage() {
+            var messages = [
+                "Happy Valentine's Day! You make my heart skip a beat.",
+                "Roses are red, violets are blue, sugar is sweet, and so are you!",
+                "You're the one I love to be with on Valentine's Day and every day!",
+                "Just wanted to remind you how much I love you. Happy Valentine's Day!",
+                "I'm so grateful to have you in my life. Happy Valentine's Day!",
+                "Every moment with you is precious. Happy Valentine's Day!",
+                "You're the best thing that's ever happened to me. Happy Valentine's Day!",
+                "I love you more than words can express. Happy Valentine's Day!"
+            ];
+            var message = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById("valentines-message").innerText = message;
+        }
+    </script>
+</body>
+</html>
