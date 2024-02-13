@@ -25,7 +25,8 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            width: 400px;
+            width: 90%;
+            max-width: 400px;
             animation: toaster 4s ease-in-out infinite alternate;
         }
         @keyframes toaster {
@@ -58,6 +59,19 @@
             line-height: 1.6;
             margin-bottom: 30px;
         }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            .card {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -70,7 +84,7 @@
 
     <script>
         function generateValentinesMessage() {
-            var messages = [
+            let messages = [
                 "Happy Valentine's Day! You make my heart skip a beat.",
                 "Roses are red, violets are blue, sugar is sweet, and so are you!",
                 "You're the one I love to be with on Valentine's Day and every day!",
@@ -80,7 +94,7 @@
                 "You're the best thing that's ever happened to me. Happy Valentine's Day!",
                 "I love you more than words can express. Happy Valentine's Day!"
             ];
-            var message = messages[Math.floor(Math.random() * messages.length)];
+             message = messages[Math.floor(Math.random() * messages.length)];
             document.getElementById("valentines-message").innerText = message;
         }
     </script>
